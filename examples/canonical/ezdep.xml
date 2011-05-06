@@ -1,0 +1,34 @@
+<sdep pid="demo:MyServiceDeployment"
+    cmodel="demo:MyContentModel"
+    label="My Service Deployment">
+  <impl method="methodOne">
+    <datastream-input datastream="FOO"/>
+    <url-pattern>(FOO)</url-pattern>
+  </impl>
+  <impl method="methodTwo">
+    <default-input name="uri" value="$objuri"/>
+    <url-pattern>
+      http://local.fedora.server/fedora/risearch
+      ?format=(parm1)
+      &amp;type=triples
+      &amp;lang=spo
+      &amp;query=(uri)+*+*
+    </url-pattern>
+  </impl>
+  <impl method="methodThree">
+    <default-input name="pid" value="$pid"/>
+    <datastream-input datastream="FOO"/>
+    <datastream-input datastream="BAR"/>
+    <datastream-input datastream="BAZ" object="demo:MyContentModel"/>
+    <url-pattern>
+      http://example.org/service
+      ?a=(parm1)
+      &amp;b=(parm2)
+      &amp;c=(parm3)
+      &amp;d=(FOO)
+      &amp;e=(BAR)
+      &amp;f=(BAZ)
+      &amp;g=(pid)
+    </url-pattern>
+  </impl>
+</sdep>

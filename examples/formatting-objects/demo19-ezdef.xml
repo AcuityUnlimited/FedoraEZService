@@ -1,0 +1,3 @@
+<sdef pid="demo:19" label="SDef for FO demo">
+  <method name="getPDF"/>
+</sdef>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" VERSION="1.1" PID="demo:13">
+   <foxml:objectProperties>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#label"
+                      VALUE="SDep for doc transform demo"/>
+   </foxml:objectProperties>
+   <foxml:datastream ID="RELS-EXT" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="RELS-EXT1.0" MIMETYPE="application/rdf+xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0"
+                               LABEL="RDF Statements about this object">
+         <foxml:xmlContent>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+               <rdf:Description rdf:about="info:fedora/demo:13">
+                  <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ServiceDeployment-3.0"/>
+                  <fedora-model:isDeploymentOf rdf:resource="info:fedora/demo:12"/>
+                  <fedora-model:isContractorOf rdf:resource="info:fedora/demo:XML_TO_HTMLDOC"/>
+               </rdf:Description>
+            </rdf:RDF>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="METHODMAP" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="METHODMAP1.0"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraSDepMethodMap-1.1"
+                               LABEL="Deployment Method Map"
+                               MIMETYPE="text/xml">
+         <foxml:xmlContent>
+            <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="N/A">
+               <fmm:method operationName="getDocumentStyle1" wsdlMsgName="getDocumentStyle1Request"
+                           wsdlMsgOutput="response">
+                  <fmm:DefaultInputParm parmName="CLEAR_CACHE" defaultValue="yes" passBy="VALUE" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="XML_SOURCE" passBy="URL_REF" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="XSL_STYLESHEET1" passBy="URL_REF" required="TRUE"/>
+                  <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
+               </fmm:method>
+               <fmm:method operationName="getDocumentStyle2" wsdlMsgName="getDocumentStyle2Request"
+                           wsdlMsgOutput="response">
+                  <fmm:DefaultInputParm parmName="CLEAR_CACHE" defaultValue="yes" passBy="VALUE" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="XML_SOURCE" passBy="URL_REF" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="XSL_STYLESHEET2" passBy="URL_REF" required="TRUE"/>
+                  <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
+               </fmm:method>
+            </fmm:MethodMap>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="DSINPUTSPEC" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="DSINPUTSPEC1.0" MIMETYPE="text/xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraDSInputSpec-1.1"
+                               LABEL="Datastream Input Specification">
+         <foxml:xmlContent>
+            <fbs:DSInputSpec xmlns:fbs="http://fedora.comm.nsdlib.org/service/bindspec" label="N/A">
+               <fbs:DSInput wsdlMsgPartName="XML_SOURCE" DSMin="1" DSMax="1" DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+               <fbs:DSInput wsdlMsgPartName="XSL_STYLESHEET1" DSMin="1" DSMax="1" DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+               <fbs:DSInput wsdlMsgPartName="XSL_STYLESHEET2" DSMin="1" DSMax="1" DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+            </fbs:DSInputSpec>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="WSDL" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="WSDL1.0" MIMETYPE="text/xml" FORMAT_URI="http://schemas.xmlsoap.org/wsdl/"
+                               LABEL="WSDL Bindings">
+         <foxml:xmlContent>
+            <wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                              xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap"
+                              xmlns:soapenc="http://schemas.xmlsoap.org/wsdl/soap/encoding"
+                              xmlns:this="urn:thisNamespace"
+                              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                              name="N/A"
+                              targetNamespace="urn:thisNamespace">
+               <wsdl:types>
+                  <xsd:schema targetNamespace="urn:thisNamespace">
+                     <xsd:simpleType name="inputType">
+                        <xsd:restriction base="xsd:string"/>
+                     </xsd:simpleType>
+                  </xsd:schema>
+               </wsdl:types>
+               <wsdl:message name="getDocumentStyle1Request">
+                  <wsdl:part name="CLEAR_CACHE" type="this:inputType"/>
+                  <wsdl:part name="XML_SOURCE" type="this:inputType"/>
+                  <wsdl:part name="XSL_STYLESHEET1" type="this:inputType"/>
+               </wsdl:message>
+               <wsdl:message name="response">
+                  <wsdl:part name="response" type="xsd:base64Binary"/>
+               </wsdl:message>
+               <wsdl:message name="getDocumentStyle2Request">
+                  <wsdl:part name="CLEAR_CACHE" type="this:inputType"/>
+                  <wsdl:part name="XML_SOURCE" type="this:inputType"/>
+                  <wsdl:part name="XSL_STYLESHEET2" type="this:inputType"/>
+               </wsdl:message>
+               <wsdl:message name="response">
+                  <wsdl:part name="response" type="xsd:base64Binary"/>
+               </wsdl:message>
+               <wsdl:portType name="portType">
+                  <wsdl:operation name="getDocumentStyle1">
+                     <wsdl:input message="this:getDocumentStyle1Request"/>
+                     <wsdl:output message="this:response"/>
+                  </wsdl:operation>
+                  <wsdl:operation name="getDocumentStyle2">
+                     <wsdl:input message="this:getDocumentStyle2Request"/>
+                     <wsdl:output message="this:response"/>
+                  </wsdl:operation>
+               </wsdl:portType>
+               <wsdl:service name="N/A">
+                  <wsdl:port binding="this:binding" name="port">
+                     <http:address location="LOCAL"/>
+                  </wsdl:port>
+               </wsdl:service>
+               <wsdl:binding name="binding" type="this:portType">
+                  <http:binding verb="GET"/>
+                  <wsdl:operation name="getDocumentStyle1">
+                     <http:operation location="http://local.fedora.server/saxon/SaxonServlet?source=(XML_SOURCE)&amp;style=(XSL_STYLESHEET1)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"/>
+                     <wsdl:input>
+                        <http:urlReplacement/>
+                     </wsdl:input>
+                     <wsdl:output>
+                        <mime:content type="N/A"/>
+                     </wsdl:output>
+                  </wsdl:operation>
+                  <wsdl:operation name="getDocumentStyle2">
+                     <http:operation location="http://local.fedora.server/saxon/SaxonServlet?source=(XML_SOURCE)&amp;style=(XSL_STYLESHEET2)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"/>
+                     <wsdl:input>
+                        <http:urlReplacement/>
+                     </wsdl:input>
+                     <wsdl:output>
+                        <mime:content type="N/A"/>
+                     </wsdl:output>
+                  </wsdl:operation>
+               </wsdl:binding>
+            </wsdl:definitions>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+</foxml:digitalObject>

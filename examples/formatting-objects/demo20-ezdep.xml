@@ -1,0 +1,11 @@
+<sdep pid="demo:20"
+    cmodel="demo:FO_TO_PDFDOC"
+    label="SDep for formatting objects demo">
+  <impl method="getPDF">
+    <datastream-input datastream="XML_SOURCE"/>
+    <url-pattern>
+      http://local.fedora.server/fop/FOPServlet
+      ?source=(XML_SOURCE)
+    </url-pattern>
+  </impl>
+</sdep>

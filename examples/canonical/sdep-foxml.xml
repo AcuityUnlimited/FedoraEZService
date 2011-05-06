@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" VERSION="1.1"
+                     PID="demo:MyServiceDeployment">
+   <foxml:objectProperties>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="My Service Deployment"/>
+   </foxml:objectProperties>
+   <foxml:datastream ID="RELS-EXT" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="RELS-EXT1.0" MIMETYPE="application/rdf+xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0"
+                               LABEL="RDF Statements about this object">
+         <foxml:xmlContent>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+               <rdf:Description rdf:about="info:fedora/demo:MyServiceDeployment">
+                  <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ServiceDeployment-3.0"/>
+                  <fedora-model:isDeploymentOf rdf:resource="info:fedora/demo:MyServiceDefinition"/>
+                  <fedora-model:isContractorOf rdf:resource="info:fedora/demo:MyContentModel"/>
+               </rdf:Description>
+            </rdf:RDF>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="METHODMAP" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="METHODMAP1.0"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraSDepMethodMap-1.1"
+                               LABEL="Deployment Method Map"
+                               MIMETYPE="text/xml">
+         <foxml:xmlContent>
+            <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="N/A">
+               <fmm:method operationName="methodOne" wsdlMsgName="methodOneRequest"
+                           wsdlMsgOutput="response">
+                  <fmm:DatastreamInputParm parmName="FOO" passBy="URL_REF" required="TRUE"/>
+                  <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
+               </fmm:method>
+               <fmm:method operationName="methodTwo" wsdlMsgName="methodTwoRequest"
+                           wsdlMsgOutput="response">
+                  <fmm:UserInputParm parmName="parm1" defaultValue="value1" required="false" passBy="VALUE"/>
+                  <fmm:DefaultInputParm parmName="uri" defaultValue="$objuri" passBy="VALUE" required="TRUE"/>
+                  <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
+               </fmm:method>
+               <fmm:method operationName="methodThree" wsdlMsgName="methodThreeRequest"
+                           wsdlMsgOutput="response">
+                  <fmm:UserInputParm parmName="parm1" defaultValue="value1" required="false" passBy="VALUE">
+                     <fmm:ValidParmValues>
+                        <fmm:ValidParm value="value1"/>
+                        <fmm:ValidParm value="value2"/>
+                     </fmm:ValidParmValues>
+                  </fmm:UserInputParm>
+                  <fmm:UserInputParm parmName="parm2" defaultValue="" required="true" passBy="VALUE"/>
+                  <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="FOO" passBy="URL_REF" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="BAR" passBy="URL_REF" required="TRUE"/>
+                  <fmm:DatastreamInputParm parmName="BAZ" passBy="URL_REF" required="TRUE"/>
+                  <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
+               </fmm:method>
+            </fmm:MethodMap>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="DSINPUTSPEC" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="DSINPUTSPEC1.0" MIMETYPE="text/xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraDSInputSpec-1.1"
+                               LABEL="Datastream Input Specification">
+         <foxml:xmlContent>
+            <fbs:DSInputSpec xmlns:fbs="http://fedora.comm.nsdlib.org/service/bindspec" label="N/A">
+               <fbs:DSInput wsdlMsgPartName="FOO" DSMin="1" DSMax="1" DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+               <fbs:DSInput wsdlMsgPartName="BAR" DSMin="1" DSMax="1" DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+               <fbs:DSInput wsdlMsgPartName="BAZ" pid="demo:MyContentModel" DSMin="1" DSMax="1"
+                            DSOrdinality="false">
+                  <fbs:DSInputLabel>N/A</fbs:DSInputLabel>
+                  <fbs:DSMIME>N/A</fbs:DSMIME>
+                  <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+               </fbs:DSInput>
+            </fbs:DSInputSpec>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="WSDL" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="WSDL1.0" MIMETYPE="text/xml" FORMAT_URI="http://schemas.xmlsoap.org/wsdl/"
+                               LABEL="WSDL Bindings">
+         <foxml:xmlContent>
+            <wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                              xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap"
+                              xmlns:soapenc="http://schemas.xmlsoap.org/wsdl/soap/encoding"
+                              xmlns:this="urn:thisNamespace"
+                              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                              name="N/A"
+                              targetNamespace="urn:thisNamespace">
+               <wsdl:types>
+                  <xsd:schema targetNamespace="urn:thisNamespace">
+                     <xsd:simpleType name="inputType">
+                        <xsd:restriction base="xsd:string"/>
+                     </xsd:simpleType>
+                  </xsd:schema>
+               </wsdl:types>
+               <wsdl:message name="methodOneRequest">
+                  <wsdl:part name="FOO" type="this:inputType"/>
+               </wsdl:message>
+               <wsdl:message name="response">
+                  <wsdl:part name="response" type="xsd:base64Binary"/>
+               </wsdl:message>
+               <wsdl:message name="methodTwoRequest">
+                  <wsdl:part name="parm1" type="this:inputType"/>
+                  <wsdl:part name="uri" type="this:inputType"/>
+               </wsdl:message>
+               <wsdl:message name="response">
+                  <wsdl:part name="response" type="xsd:base64Binary"/>
+               </wsdl:message>
+               <wsdl:message name="methodThreeRequest">
+                  <wsdl:part name="parm1" type="this:inputType"/>
+                  <wsdl:part name="parm2" type="this:inputType"/>
+                  <wsdl:part name="pid" type="this:inputType"/>
+                  <wsdl:part name="FOO" type="this:inputType"/>
+                  <wsdl:part name="BAR" type="this:inputType"/>
+                  <wsdl:part name="BAZ" type="this:inputType"/>
+               </wsdl:message>
+               <wsdl:message name="response">
+                  <wsdl:part name="response" type="xsd:base64Binary"/>
+               </wsdl:message>
+               <wsdl:portType name="portType">
+                  <wsdl:operation name="methodOne">
+                     <wsdl:input message="this:methodOneRequest"/>
+                     <wsdl:output message="this:response"/>
+                  </wsdl:operation>
+                  <wsdl:operation name="methodTwo">
+                     <wsdl:input message="this:methodTwoRequest"/>
+                     <wsdl:output message="this:response"/>
+                  </wsdl:operation>
+                  <wsdl:operation name="methodThree">
+                     <wsdl:input message="this:methodThreeRequest"/>
+                     <wsdl:output message="this:response"/>
+                  </wsdl:operation>
+               </wsdl:portType>
+               <wsdl:service name="N/A">
+                  <wsdl:port binding="this:binding" name="port">
+                     <http:address location="LOCAL"/>
+                  </wsdl:port>
+               </wsdl:service>
+               <wsdl:binding name="binding" type="this:portType">
+                  <http:binding verb="GET"/>
+                  <wsdl:operation name="methodOne">
+                     <http:operation location="(FOO)"/>
+                     <wsdl:input>
+                        <http:urlReplacement/>
+                     </wsdl:input>
+                     <wsdl:output>
+                        <mime:content type="N/A"/>
+                     </wsdl:output>
+                  </wsdl:operation>
+                  <wsdl:operation name="methodTwo">
+                     <http:operation location="http://local.fedora.server/fedora/risearch?format=(parm1)&amp;type=triples&amp;lang=spo&amp;query=(uri)+*+*"/>
+                     <wsdl:input>
+                        <http:urlReplacement/>
+                     </wsdl:input>
+                     <wsdl:output>
+                        <mime:content type="N/A"/>
+                     </wsdl:output>
+                  </wsdl:operation>
+                  <wsdl:operation name="methodThree">
+                     <http:operation location="http://example.org/service?a=(parm1)&amp;b=(parm2)&amp;c=(parm3)&amp;d=(FOO)&amp;e=(BAR)&amp;f=(BAZ)&amp;g=(pid)"/>
+                     <wsdl:input>
+                        <http:urlReplacement/>
+                     </wsdl:input>
+                     <wsdl:output>
+                        <mime:content type="N/A"/>
+                     </wsdl:output>
+                  </wsdl:operation>
+               </wsdl:binding>
+            </wsdl:definitions>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+</foxml:digitalObject>

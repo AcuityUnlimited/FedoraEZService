@@ -1,0 +1,4 @@
+<sdef pid="demo:12" label="SDef for doc transform demo">
+  <method name="getDocumentStyle1"/>
+  <method name="getDocumentStyle2"/>
+</sdef>

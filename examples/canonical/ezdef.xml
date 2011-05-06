@@ -1,0 +1,13 @@
+<sdef pid="demo:MyServiceDefinition" label="My Service Definition">
+  <method name="methodOne"/>
+  <method name="methodTwo">
+    <user-input name="parm1" optional="true" default="value1"/>
+  </method>
+  <method name="methodThree">
+    <user-input name="parm1" optional="true" default="value1">
+      <valid value="value1"/>
+      <valid value="value2"/>
+    </user-input>
+    <user-input name="parm2"/>
+  </method>
+</sdef>

@@ -1,0 +1,6 @@
+<sdef pid="demo:1" label="SDef for simple image demos">
+  <method name="getThumbnail"/>
+  <method name="getMedium"/>
+  <method name="getHigh"/>
+  <method name="getVeryHigh"/>
+</sdef>

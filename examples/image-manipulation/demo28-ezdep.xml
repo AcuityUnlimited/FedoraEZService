@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE ezdep [
+<!ENTITY endpoint "http://local.fedora.server/imagemanip/ImageManipulation">
+]>
+<sdep pid="demo:28"
+    cmodel="demo:UVA_STD_IMAGE"
+    label="SDep for image manipulation demo">
+  <impl method="resizeImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=resize
+      &amp;newWidth=(width)
+    </url-pattern>
+  </impl>
+  <impl method="zoomImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=zoom
+      &amp;zoomAmt=(zoom)
+    </url-pattern>
+  </impl>
+  <impl method="brightImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=brightness
+      &amp;brightAmt=(bright)
+    </url-pattern>
+  </impl>
+  <impl method="watermarkImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=watermark
+      &amp;wmText=(watermark)
+    </url-pattern>
+  </impl>
+  <impl method="grayscaleImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=grayscale
+    </url-pattern>
+  </impl>
+  <impl method="cropImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=crop
+      &amp;cropX=(x)
+      &amp;cropY=(y)
+      &amp;cropWidth=(width)
+      &amp;cropHeight=(height)
+    </url-pattern>
+  </impl>
+  <impl method="convertImage">
+    <datastream-input datastream="url"/>
+    <url-pattern>
+      &endpoint;?url=(url)
+      &amp;op=convert
+      &amp;convertTo=(convertTo)
+    </url-pattern>
+  </impl>
+</sdep>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" VERSION="1.1" PID="demo:27">
+   <foxml:objectProperties>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#label"
+                      VALUE="SDef for image manipulation demo"/>
+   </foxml:objectProperties>
+   <foxml:datastream ID="RELS-EXT" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="RELS-EXT1.0" MIMETYPE="application/rdf+xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0"
+                               LABEL="RDF Statements about this object">
+         <foxml:xmlContent>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+               <rdf:Description rdf:about="info:fedora/demo:27">
+                  <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ServiceDefinition-3.0"/>
+               </rdf:Description>
+            </rdf:RDF>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="METHODMAP" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="METHODMAP1.0"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraSDefMethodMap-1.0"
+                               LABEL="Abstract Method Map"
+                               MIMETYPE="text/xml">
+         <foxml:xmlContent>
+            <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="N/A">
+               <fmm:method operationName="resizeImage">
+                  <fmm:UserInputParm parmName="width" defaultValue="150" required="false" passBy="VALUE"/>
+               </fmm:method>
+               <fmm:method operationName="zoomImage">
+                  <fmm:UserInputParm parmName="zoom" defaultValue="3" required="false" passBy="VALUE"/>
+               </fmm:method>
+               <fmm:method operationName="brightImage">
+                  <fmm:UserInputParm parmName="bright" defaultValue="3.5" required="false" passBy="VALUE"/>
+               </fmm:method>
+               <fmm:method operationName="watermarkImage">
+                  <fmm:UserInputParm parmName="watermark" defaultValue="Watermarked 2009" required="false"
+                                     passBy="VALUE"/>
+               </fmm:method>
+               <fmm:method operationName="grayscaleImage"/>
+               <fmm:method operationName="cropImage">
+                  <fmm:UserInputParm parmName="x" defaultValue="30" required="false" passBy="VALUE"/>
+                  <fmm:UserInputParm parmName="y" defaultValue="100" required="false" passBy="VALUE"/>
+                  <fmm:UserInputParm parmName="width" defaultValue="" required="true" passBy="VALUE"/>
+                  <fmm:UserInputParm parmName="height" defaultValue="" required="true" passBy="VALUE"/>
+               </fmm:method>
+               <fmm:method operationName="convertImage">
+                  <fmm:UserInputParm parmName="convertTo" defaultValue="gif" required="false" passBy="VALUE">
+                     <fmm:ValidParmValues>
+                        <fmm:ValidParm value="jpg"/>
+                        <fmm:ValidParm value="gif"/>
+                        <fmm:ValidParm value="tiff"/>
+                        <fmm:ValidParm value="png"/>
+                        <fmm:ValidParm value="bmp"/>
+                     </fmm:ValidParmValues>
+                  </fmm:UserInputParm>
+               </fmm:method>
+            </fmm:MethodMap>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+</foxml:digitalObject>

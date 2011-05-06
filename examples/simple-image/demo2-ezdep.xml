@@ -1,0 +1,20 @@
+<sdep pid="demo:2"
+    cmodel="demo:UVA_STD_IMAGE_1"
+    label="SDep for local simple image demo">
+  <impl method="getThumbnail">
+    <datastream-input datastream="THUMBRES_IMG"/>
+    <url-pattern>(THUMBRES_IMG)</url-pattern>
+  </impl>
+  <impl method="getMedium">
+    <datastream-input datastream="MEDRES_IMG"/>
+    <url-pattern>(MEDRES_IMG)</url-pattern>
+  </impl>
+  <impl method="getHigh">
+    <datastream-input datastream="HIGHRES_IMG"/>
+    <url-pattern>(HIGHRES_IMG)</url-pattern>
+  </impl>
+  <impl method="getVeryHigh">
+    <datastream-input datastream="VERYHIGHRES_IMG"/>
+    <url-pattern>(VERYHIGHRES_IMG)</url-pattern>
+  </impl>
+</sdep>

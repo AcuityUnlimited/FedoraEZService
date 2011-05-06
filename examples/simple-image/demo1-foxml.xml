@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" VERSION="1.1" PID="demo:1">
+   <foxml:objectProperties>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+      <foxml:property NAME="info:fedora/fedora-system:def/model#label"
+                      VALUE="SDef for simple image demos"/>
+   </foxml:objectProperties>
+   <foxml:datastream ID="RELS-EXT" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="RELS-EXT1.0" MIMETYPE="application/rdf+xml"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0"
+                               LABEL="RDF Statements about this object">
+         <foxml:xmlContent>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+               <rdf:Description rdf:about="info:fedora/demo:1">
+                  <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ServiceDefinition-3.0"/>
+               </rdf:Description>
+            </rdf:RDF>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+   <foxml:datastream ID="METHODMAP" CONTROL_GROUP="X" STATE="A" VERSIONABLE="true">
+      <foxml:datastreamVersion ID="METHODMAP1.0"
+                               FORMAT_URI="info:fedora/fedora-system:FedoraSDefMethodMap-1.0"
+                               LABEL="Abstract Method Map"
+                               MIMETYPE="text/xml">
+         <foxml:xmlContent>
+            <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="N/A">
+               <fmm:method operationName="getThumbnail"/>
+               <fmm:method operationName="getMedium"/>
+               <fmm:method operationName="getHigh"/>
+               <fmm:method operationName="getVeryHigh"/>
+            </fmm:MethodMap>
+         </foxml:xmlContent>
+      </foxml:datastreamVersion>
+   </foxml:datastream>
+</foxml:digitalObject>

@@ -1,0 +1,57 @@
+EZService - Simplifying Fedora Service Definition & Deployment
+--------------------------------------------------------------
+
+============
+Introduction
+============
+
+This utility includes stylesheets generate Fedora Service Definition 
+and Deployment objects from simple XML input files.  This technique
+is much easier to understand (and less error-prone) than creating
+SDef and SDep FOXML objects by hand.
+
+==========
+How to use
+==========
+
+1. Write your service definition in the "EZDef" format.
+   For example EZDef files, see the examples/ directory.
+
+2. Write one or more service deployments in the "EZDep" format.
+   Again, see the examples/ directory.
+
+3. Run your EZDef file through the ezdef.xsl stylesheet.
+
+   The ezdef.sh script will do this for you, printing the
+   resulting FOXML to standard output.
+
+   Usage:
+       ./ezdef.sh path/to/your-ezdef.xml
+
+   Or, to write to a file:
+       ./ezdef.sh path/to/your-ezdef.xml > your-sdef-foxml.xml
+
+4. Run your EZDep file(s) through the ezdep.xsl stylesheet.
+   This stylesheet takes a parameter; "ezdef", which is the
+   path to the associated EZDep file.
+
+   The ezdep.sh script will do this for you, printing the
+   resulting FOXML to standard output.
+
+   Usage:
+       ./ezdep.sh path/to/your-ezdep.xml path/to/your-ezdef.xml
+
+   Or, to write to a file:
+       ./ezdep.sh path/to/your-ezdep.xml path/to/your-ezdef > your-sdep-foxml.xml
+
+5. Ingest your generated Service Definition FOXML files into Fedora
+
+========
+Examples
+========
+
+Canonical Example:
+
+./ezdef.sh examples/canonical/ezdef.xml > sdef-foxml.xml
+./ezdep.sh examples/canonical/ezdep.xml examples/canonical/ezdef.xml > sdep-foxml.xml
+

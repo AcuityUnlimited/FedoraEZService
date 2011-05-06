@@ -1,0 +1,30 @@
+<sdef pid="demo:27" label="SDef for image manipulation demo">
+  <method name="resizeImage">
+    <user-input name="width" optional="true" default="150"/>
+  </method>
+  <method name="zoomImage">
+    <user-input name="zoom" optional="true" default="3"/>
+  </method>
+  <method name="brightImage">
+    <user-input name="bright" optional="true" default="3.5"/>
+  </method>
+  <method name="watermarkImage">
+    <user-input name="watermark" optional="true" default="Watermarked 2009"/>
+  </method>
+  <method name="grayscaleImage"/>
+  <method name="cropImage">
+    <user-input name="x" optional="true" default="30"/>
+    <user-input name="y" optional="true" default="100"/>
+    <user-input name="width"/>
+    <user-input name="height"/>
+  </method>
+  <method name="convertImage">
+    <user-input name="convertTo" optional="true" default="gif">
+      <valid value="jpg"/>
+      <valid value="gif"/>
+      <valid value="tiff"/>
+      <valid value="png"/>
+      <valid value="bmp"/>
+    </user-input>
+  </method>
+</sdef>

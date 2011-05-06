@@ -1,0 +1,26 @@
+<sdep pid="demo:13"
+    cmodel="demo:XML_TO_HTMLDOC"
+    label="SDep for doc transform demo">
+  <impl method="getDocumentStyle1">
+    <default-input name="CLEAR_CACHE" value="yes"/>
+    <datastream-input datastream="XML_SOURCE"/>
+    <datastream-input datastream="XSL_STYLESHEET1"/>
+    <url-pattern>
+      http://local.fedora.server/saxon/SaxonServlet
+      ?source=(XML_SOURCE)
+      &amp;style=(XSL_STYLESHEET1)
+      &amp;clear-stylesheet-cache=(CLEAR_CACHE)
+    </url-pattern>
+  </impl>
+  <impl method="getDocumentStyle2">
+    <default-input name="CLEAR_CACHE" value="yes"/>
+    <datastream-input datastream="XML_SOURCE"/>
+    <datastream-input datastream="XSL_STYLESHEET2"/>
+    <url-pattern>
+      http://local.fedora.server/saxon/SaxonServlet
+      ?source=(XML_SOURCE)
+      &amp;style=(XSL_STYLESHEET2)
+      &amp;clear-stylesheet-cache=(CLEAR_CACHE)
+    </url-pattern>
+  </impl>
+</sdep>
