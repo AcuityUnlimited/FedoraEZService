@@ -66,12 +66,14 @@
                   <xsl:value-of select="$sdef/@pid"/>
                 </xsl:attribute>
               </fedora-model:isDeploymentOf>
-              <fedora-model:isContractorOf>
-                <xsl:attribute name="rdf:resource">
-                  <xsl:text>info:fedora/</xsl:text>
-                  <xsl:value-of select="@cmodel"/>
-                </xsl:attribute>
-              </fedora-model:isContractorOf>
+              <xsl:for-each select="cmodel">
+                <fedora-model:isContractorOf>
+                    <xsl:attribute name="rdf:resource">
+                    <xsl:text>info:fedora/</xsl:text>
+                    <xsl:value-of select="."/>
+                    </xsl:attribute>
+                </fedora-model:isContractorOf>
+              </xsl:for-each>
             </rdf:Description>
           </rdf:RDF>
         </foxml:xmlContent>

@@ -1,6 +1,6 @@
 <sdep pid="demo:2"
-    cmodel="demo:UVA_STD_IMAGE_1"
     label="SDep for local simple image demo">
+  <cmodel>demo:UVA_STD_IMAGE_1</cmodel>
   <impl method="getThumbnail">
     <datastream-input datastream="THUMBRES_IMG"/>
     <url-pattern>(THUMBRES_IMG)</url-pattern>

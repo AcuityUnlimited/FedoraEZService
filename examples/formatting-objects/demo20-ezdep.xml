@@ -1,6 +1,6 @@
 <sdep pid="demo:20"
-    cmodel="demo:FO_TO_PDFDOC"
     label="SDep for formatting objects demo">
+  <cmodel>demo:FO_TO_PDFDOC</cmodel>
   <impl method="getPDF">
     <datastream-input datastream="XML_SOURCE"/>
     <url-pattern>

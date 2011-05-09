@@ -1,6 +1,6 @@
 <sdep pid="demo:MyServiceDeployment"
-    cmodel="demo:MyContentModel"
     label="My Service Deployment">
+  <cmodel>demo:MyContentModel</cmodel>
   <impl method="methodOne">
     <datastream-input datastream="FOO"/>
     <url-pattern>(FOO)</url-pattern>

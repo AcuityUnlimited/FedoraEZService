@@ -1,6 +1,6 @@
 <sdep pid="demo:13"
-    cmodel="demo:XML_TO_HTMLDOC"
     label="SDep for doc transform demo">
+  <cmodel>demo:XML_TO_HTMLDOC</cmodel>
   <impl method="getDocumentStyle1">
     <default-input name="CLEAR_CACHE" value="yes"/>
     <datastream-input datastream="XML_SOURCE"/>

@@ -3,8 +3,8 @@
 <!ENTITY endpoint "http://local.fedora.server/imagemanip/ImageManipulation">
 ]>
 <sdep pid="demo:28"
-    cmodel="demo:UVA_STD_IMAGE"
     label="SDep for image manipulation demo">
+  <cmodel>demo:UVA_STD_IMAGE</cmodel>
   <impl method="resizeImage">
     <datastream-input datastream="url"/>
     <url-pattern>
