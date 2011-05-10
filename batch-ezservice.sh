@@ -4,7 +4,7 @@
 # Stephen Bayliss 2011-05-09
 #
 # Dependencies:
-# - EZService 1.1 or EZService 1.0
+# - EZService
 # - Environment variable EZSERVICE must point to the EZService folder
 #
 # Description
@@ -13,6 +13,9 @@
 # SDef and SDep FOXML files
 #
 # Usage
+#
+# Copy this script to the base directory of your EZDef and EZDep input files.
+# Change to that directory, and run:
 #
 # ../batch-ezservice.sh
 #
@@ -109,7 +112,6 @@ do
     if [[ "$OSTYPE" == "cygwin" ]]
     then
       ezdeffull=`cygpath -m $ezdeffull`
-      echo "cygpath: $ezdeffull"
     fi
 
     # do the EZDep
